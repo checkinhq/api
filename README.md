@@ -1,5 +1,7 @@
 # Checkin API
 
+[![Build Status](https://img.shields.io/travis/checkinhq/api.svg?style=flat-square)](https://travis-ci.org/checkinhq/api)
+
 This repository contains the original interface definitions of Checkin APIs that support gRPC protocols. Reading the original interface definitions can provide a better understanding and help you to utilize the API more efficiently.
 
 
