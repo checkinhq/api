@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package checkin.user.v1alpha;
+
+option go_package = "user";
+
+message NewUserRequest {
+    string name = 1;
+    string email = 2;
+    string password = 3;
+    string first_name = 4;
+    string last_name = 5;
+}
+
+service User {
+    rpc NewUser(NewUserRequest) returns (Response);
+}

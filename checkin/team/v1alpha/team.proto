@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package checkin.team.v1alpha;
+
+import "checkin/protobuf/empty.proto";
+
+option go_package = "team";
+
+// Team is responsible for managing teams, members, settings, etc.
+service Team {
+    // CreateTeam creates a new team.
+    rpc CreateTeam(CreateTeamRequest) returns (Team);
+
+    // AddMembers adds a list of members to a team.
+    rpc AddMembers(AddMembersRequest) returns (checkin.protobuf.EmptyMessage);
+}
+
+// CreateTeamRequest creates a new team.
+message CreateTeamRequest {
+    // Displayed name of the team.
+    string name = 1;
+}
+
+// Team represents a team.
+message Team {
+    // Team ID.
+    string id = 1;
+
+    // Displayed name of the team.
+    string name = 2;
+}
+
+// AddMembersRequest adds a list of members to a team.
+message AddMembersRequest {
+    // Team ID to add members to.
+    string team_id = 1;
+
+    // List of User IDs.
+    repeated string user_id = 2;
+}

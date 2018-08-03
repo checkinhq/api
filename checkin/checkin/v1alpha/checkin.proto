@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package checkin.checkin.v1alpha;
+
+option go_package = "checkin";
+
+message CheckinRequest {
+    string user = 1;
+
+    string previous = 2;
+    bool goals_met = 2;
+    string next = 2;
+    string blockers = 2;
+}
+
+service Checkin {
+    rpc Checkin(CheckinRequest) returns (Response);
+}
